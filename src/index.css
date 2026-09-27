@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #e8f0e7;
+  --surface: #f3f3df;
+  --surface-2: #d7e7dc;
+  --ink: #285247;
+  --muted: #527367;
+  --slate: #718f82;
+  --accent: #dc684c;
+  --accent-hover: #bd503a;
+  --cobalt: #527b70;
+  --gold: #d5a33f;
+  --line: rgba(40, 82, 71, 0.16);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(220, 104, 76, 0.24); color: var(--ink); }
+
+.bg-footer .text-ink { color: #e8f0e7; }
+.bg-footer .text-muted { color: #c5d8cb; }
+.bg-footer .text-slate { color: #a8c1b2; }
+.bg-footer .border-line { border-color: rgba(232, 240, 231, 0.2); }
+
+input, select, textarea { color-scheme: light; }
+
+.font-display {
+  font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+html.custom-cursor-active,
+html.custom-cursor-active a,
+html.custom-cursor-active button {
+  cursor: none;
+}
+
+/* violet-to-cobalt gradient for a single highlighted headline word, e.g. "Future" */
+.text-gradient-accent {
+  background: linear-gradient(90deg, var(--accent), var(--cobalt));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
